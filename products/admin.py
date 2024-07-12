@@ -2,7 +2,8 @@ from django.contrib import admin
 from .models import Product, ProductImage
 
 class ProductImageInline(admin.TabularInline):
-    mode = ProductImage
+    model = ProductImage
+    extra = 1
 
 class ProductAdmin(admin.ModelAdmin):
     inlines = [ProductImageInline]
