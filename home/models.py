@@ -36,5 +36,17 @@ class Testimonial(models.Model):
     def __str__(self):
         return self.client_name
 
+class CompanyInfo(models.Model):
+    name = models.CharField(max_length=255)
+    logo = models.ImageField(upload_to='company_logo/', blank=True, null=True)
+    history = models.TextField()
+    mission = models.TextField()
+    vision = models.TextField()
+    about = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.company_name
 
 
