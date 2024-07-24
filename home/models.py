@@ -26,5 +26,15 @@ class ContactInfo(models.Model):
     def __str__(self):
         return self.address
 
+class Testimonial(models.Model):
+    client_name = models.CharField(max_length=255)
+    client_photo = models.ImageField(upload_to='client_photos/', blank=True, null=True)
+    testimonial = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.client_name
+
 
 
